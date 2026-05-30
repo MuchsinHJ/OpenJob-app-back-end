@@ -1,8 +1,9 @@
 const validate = (schema) => (req, res, next) => {
   const { error, value } = schema.validate(req.body, {
-    abortEarly: false, //memvalidasi keseluruhan error (false)
-    allowUnknown: true, //memungkinkan field yang tidak ada di schema dijalankan (true)
-    stripUnknown: true, //menghapus field yang tidak ada di schema (true)
+    abortEarly: false,    // validasi semua field, tidak berhenti di error pertama
+    allowUnknown: false,  // reject field yang tidak ada di schema
+    stripUnknown: true,   // hapus field tidak dikenal sebelum diteruskan
+    convert: false,       // NONAKTIFKAN type coercion — name:123 tetap number, tidak diubah ke "123"
   });
 
   if (error) {

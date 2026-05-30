@@ -1,10 +1,10 @@
-const ClientError = require('./client-error');
-const InvariantError = require('./invariant-error');
-const AuthenticationError = require('./authentication-error');
-const AuthorizationError = require('./authorization-error');
-const NotFoundError = require('./not-found-error');
+import ClientError from './client-error.js';
+import InvariantError from './invariant-error.js';
+import AuthenticationError from './authentication-error.js';
+import AuthorizationError from './authorization-error.js';
+import NotFoundError from './not-found-error.js';
 
-module.exports = {
+export {
   ClientError,
   InvariantError,
   AuthenticationError,
